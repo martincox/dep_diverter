@@ -3,7 +3,7 @@
 -export([init/1, do/1, format_error/1]).
 
 -define(PROVIDER, dep_diverter).
--define(DEPS, [install_deps]).
+-define(DEPS, [app_discovery]).
 
 %% ===================================================================
 %% Public API
@@ -25,7 +25,7 @@ init(State) ->
 
 -spec do(rebar_state:t()) -> {ok, rebar_state:t()} | {error, string()}.
 do(State) ->
-    rebar_api:console("~p", [State]),
+    io:format("*****Foo ~p", [State]),
     {ok, State}.
 
 -spec format_error(any()) ->  iolist().
